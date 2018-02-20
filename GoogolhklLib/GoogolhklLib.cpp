@@ -3,9 +3,16 @@
 
 #include "stdafx.h"
 
+// Å×½ºÆ®
+#include "GoogolhklLib.h"
+#include "Util\Type.h"
+#include "Util\Util.h"
+
+
 
 int main()
 {
+	std::cout << "hello world" << std::endl;
     return 0;
 }
 
