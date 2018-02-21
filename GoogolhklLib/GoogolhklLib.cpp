@@ -1,9 +1,9 @@
-// GoogolhklLib.cpp : ÄÜ¼Ö ÀÀ¿ë ÇÁ·Î±×·¥¿¡ ´ëÇÑ ÁøÀÔÁ¡À» Á¤ÀÇÇÕ´Ï´Ù.
+ï»¿// GoogolhklLib.cpp : ì½˜ì†” ì‘ìš© í”„ë¡œê·¸ë¨ì— ëŒ€í•œ ì§„ì…ì ì„ ì •ì˜í•©ë‹ˆë‹¤.
 //
 
 #include "stdafx.h"
 
-// Å×½ºÆ®
+// í…ŒìŠ¤íŠ¸ ì½”ë“œ
 #include "GoogolhklLib.h"
 #include "Util\Type.h"
 #include "Util\Util.h"

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "stdafx.h"
 
 #define RAND(type, maxVal) (type) RandomMT::getInstance()->rand(maxVal)
@@ -8,7 +8,7 @@ public:
 	RandomMT() {};
 	~RandomMT() {};
 	uint64_t rand(int maxVal) {
-		// MT19937 ³­¼ö ¿£Áø
+		// MT19937 ë‚œìˆ˜ ì—”ì§„
 		std::hash<std::thread::id> hasher;
 		std::mt19937 engine((uint32_t)time(nullptr) + (uint32_t)hasher(std::this_thread::get_id()));
 		std::uniform_int_distribution<uint64_t> distribution(0, UINT64_MAX);
