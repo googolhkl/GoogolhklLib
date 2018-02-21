@@ -147,6 +147,8 @@
     <ClInclude Include="GoogolhklLib.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Util\RandomMT.h" />
+    <ClInclude Include="Util\Singleton.h" />
     <ClInclude Include="Util\Type.h" />
     <ClInclude Include="Util\Util.h" />
   </ItemGroup>

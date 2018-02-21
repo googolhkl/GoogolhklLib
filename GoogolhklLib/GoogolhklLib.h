@@ -45,3 +45,6 @@ typedef void(*Function)(void *);  // Function f; 와 같은 문장은 void(*f)(void *)
 
 // 필수 헤더파일
 #include "./Util/Type.h"
+#include "./Util/Util.h"
+#include "./Util/Singleton.h"
+#include "./Util/RandomMT.h"
