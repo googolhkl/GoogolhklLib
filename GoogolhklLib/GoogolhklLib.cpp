@@ -8,11 +8,13 @@
 #include "Util\Type.h"
 #include "Util\Util.h"
 #include "Util\Singleton.h"
-
-
+#include "Util\Clock.h"
 
 int main() {
-	std::cout << "hello world" << std::endl;
+	printf("어제: %ws\n", CLOCK->yesterday().c_str());
+	printf("오늘: %ws\n", CLOCK->today().c_str());
+	printf("내일: %ws\n", CLOCK->tomorrow().c_str());
+	printf("오늘 요일은 %d입니다.\n", CLOCK->todayOfWeek());
     return 0;
 }
 

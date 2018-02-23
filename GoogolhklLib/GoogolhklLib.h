@@ -23,6 +23,7 @@
 #include <fcntl.h>
 #include <algorithm>
 #include <functional>
+#include <array>
 
 #include <thread>
 #include <mutex>
