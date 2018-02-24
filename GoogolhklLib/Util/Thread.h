@@ -1,3 +1,4 @@
+﻿#pragma once
 #include "stdafx.h"
 
 #define MAKE_THREAD(className, process) (new Thread(new thread_t(&className##::##process, this), L#className))

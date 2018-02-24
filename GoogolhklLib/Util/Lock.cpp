@@ -1,3 +1,4 @@
+﻿#include "stdafx.h"
 #include "Lock.h"
 #include "Thread.h"
 
@@ -60,6 +61,8 @@ size_t Lock::GetThreadId()
 
 
 // LockSafeScope
+// 생성자에서 락을걸고, 스코프 빠져나가는 객체 해제시 락을 푼다.
+// std::lock_guard(lock_t> guard(lock)과 같지만 데드락 감지를 위해 직접 구현.
 LockSafeScope::LockSafeScope(Lock *lock, const WCHAR* fileName, int lineNo)
 {
 	if (lock == nullptr)
@@ -120,6 +123,7 @@ Lock* LockManager::SearchLockCycle(Lock *newLock)
 		return nullptr;
 	}
 
+	std::vector<Lock *> trace;  // 데드락 탐지시, 걸린 락 추적
 	trace.push_back(newLock);
 	Lock *deadLock = nullptr;
 	while (true)
