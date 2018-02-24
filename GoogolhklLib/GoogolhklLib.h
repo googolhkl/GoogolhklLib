@@ -24,6 +24,7 @@
 #include <algorithm>
 #include <functional>
 #include <array>
+#include <map>
 
 #include <thread>
 #include <mutex>
@@ -49,3 +50,5 @@ typedef void(*Function)(void *);  // Function f; 와 같은 문장은 void(*f)(void *)
 #include "./Util/Util.h"
 #include "./Util/Singleton.h"
 #include "./Util/RandomMT.h"
+#include "./Util/Clock.h"
+#include "./Util/Lock.h"

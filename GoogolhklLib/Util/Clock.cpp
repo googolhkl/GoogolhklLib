@@ -1,32 +1,25 @@
 #include "stdafx.h"
 #include "Clock.h"
 
-Clock::Clock() {
-	serverStartTick_ = this->systemTick();
+Clock::Clock()
+{
+	mServerStartTick = this->SystemTick();
 }
 
 Clock::~Clock() {}
 
-wstr_t Clock::tickToStr(tick_t tick, WCHAR *fmt) {
-	array<WCHAR, SIZE_128> timeStr;
-
-	tm time;
-	localtime_s(&time, &tick);
-	wcsftime(timeStr.data(), timeStr.size(), fmt, &time);
-
-	WCHAR* a = timeStr.data();
-	return a;
+tick_t Clock::GetServerStartTick()
+{
+	return mServerStartTick;
 }
 
-tick_t Clock::serverStartTick() {
-	return serverStartTick_;
-}
-
-tick_t Clock::systemTick() {
+tick_t Clock::SystemTick()
+{
 	return system_clock::to_time_t(system_clock::now());
 }
 
-tick_t Clock::strToTick(wstr_t str, WCHAR *fmt) {
+tick_t Clock::StrToTick(wstr_t str, WCHAR *fmt)
+{
 	int year = 0;
 	int month = 0;
 	int day = 0;
@@ -41,11 +34,13 @@ tick_t Clock::strToTick(wstr_t str, WCHAR *fmt) {
 	return mktime(&time);
 }
 
-wstr_t Clock::nowTime(WCHAR *fmt) {
-	return this->tickToStr(this->systemTick(), fmt);
+wstr_t Clock::NowTime(WCHAR *fmt)
+{
+	return this->tickToStr(this->SystemTick(), fmt);
 }
 
-wstr_t Clock::nowTimeWithMilliSec(WCHAR *fmt) {
+wstr_t Clock::NowTimeWithMilliSec(WCHAR *fmt)
+{
 #if 0
 	timePoint now = system_clock::now();
 	timePoint oldSecond = system_clock::from_time_t(this->systemTick());
@@ -63,27 +58,43 @@ wstr_t Clock::nowTimeWithMilliSec(WCHAR *fmt) {
 	array<WCHAR, SIZE_8> milliStr;
 	snwprintf(milliStr, L"%03d", (int)(fractionalSeconds));
 #endif
-	wstr_t timeString = this->tickToStr(this->systemTick(), fmt);
+	wstr_t timeString = this->tickToStr(this->SystemTick(), fmt);
 	timeString += L".";
 	timeString += milliStr.data();
 	return timeString;
 }
 
-wstr_t Clock::today() {
-	return this->tickToStr(this->systemTick(), DATE_FORMAT);
+wstr_t Clock::Today()
+{
+	return this->tickToStr(this->SystemTick(), DATE_FORMAT);
 }
 
-wstr_t Clock::tomorrow() {
-	return this->tickToStr(this->systemTick() + DAY_TO_TICK(1), DATE_FORMAT);
+wstr_t Clock::Tomorrow()
+{
+	return this->tickToStr(this->SystemTick() + DAY_TO_TICK(1), DATE_FORMAT);
 }
 
-wstr_t Clock::yesterday() {
-	return this->tickToStr(this->systemTick() - DAY_TO_TICK(1), DATE_FORMAT);
+wstr_t Clock::Yesterday()
+{
+	return this->tickToStr(this->SystemTick() - DAY_TO_TICK(1), DATE_FORMAT);
 }
 
-DayOfWeek Clock::todayOfWeek() {
+DayOfWeek Clock::TodayOfWeek()
+{
 	tm time;
-	tick_t tick = this->systemTick();
+	tick_t tick = this->SystemTick();
 	localtime_s(&time, &tick);
 	return (DayOfWeek)time.tm_wday;
+}
+
+wstr_t Clock::tickToStr(tick_t tick, WCHAR *fmt)
+{
+	array<WCHAR, SIZE_128> timeStr;
+
+	tm time;
+	localtime_s(&time, &tick);
+	wcsftime(timeStr.data(), timeStr.size(), fmt, &time);
+
+	WCHAR* a = timeStr.data();
+	return a;
 }

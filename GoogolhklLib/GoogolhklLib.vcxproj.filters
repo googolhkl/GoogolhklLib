@@ -42,6 +42,12 @@
     <ClInclude Include="Util\Clock.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Util\Lock.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Thread.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -51,6 +57,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Util\Clock.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Lock.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Thread.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

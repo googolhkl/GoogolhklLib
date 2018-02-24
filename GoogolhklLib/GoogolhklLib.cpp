@@ -11,10 +11,10 @@
 #include "Util\Clock.h"
 
 int main() {
-	printf("어제: %ws\n", CLOCK->yesterday().c_str());
-	printf("오늘: %ws\n", CLOCK->today().c_str());
-	printf("내일: %ws\n", CLOCK->tomorrow().c_str());
-	printf("오늘 요일은 %d입니다.\n", CLOCK->todayOfWeek());
+	printf("어제: %ws\n", CLOCK->Yesterday().c_str());
+	printf("오늘: %ws\n", CLOCK->Today().c_str());
+	printf("내일: %ws\n", CLOCK->Tomorrow().c_str());
+	printf("오늘 요일은 %d입니다.\n", CLOCK->TodayOfWeek());
     return 0;
 }
 

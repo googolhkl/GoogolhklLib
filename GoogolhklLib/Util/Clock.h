@@ -3,7 +3,7 @@
 #include <chrono>
 #include <ctime>
 
-#define CLOCK Clock::getInstance()
+#define CLOCK Clock::GetInstance()
 #define NOW_TICK CLOCK.systemTick
 #define NOW_STRING CLOCK.nowTime
 
@@ -20,7 +20,8 @@
 #define TICK_TO_DAY(x) (x / TICK_DAY)
 #define DAY_TO_TICK(x) (x * TICK_DAY)
 
-typedef enum {
+typedef enum
+{
 	SUNDAY = 0,
 	MONDAY = 1,
 	TUESDAY = 2,
@@ -39,25 +40,27 @@ using namespace std::chrono;
 using namespace std;
 typedef system_clock::time_point timePoint;
 
-class Clock : public Singleton<Clock> {
-private:
-	tick_t serverStartTick_;
-	wstr_t tickToStr(tick_t tick, WCHAR *fmt = DATETIME_FORMAT);
-
+class Clock : public Singleton<Clock>
+{
 public:
 	Clock();
 	~Clock();
 
-	tick_t serverStartTick();
-	tick_t systemTick();
-	tick_t strToTick(wstr_t str, WCHAR *fmt = DB_TIME_FORMAT);
+	tick_t GetServerStartTick();
+	tick_t SystemTick();
+	tick_t StrToTick(wstr_t str, WCHAR *fmt = DB_TIME_FORMAT);
 
-	wstr_t nowTime(WCHAR *fmt = DATETIME_FORMAT);
-	wstr_t nowTimeWithMilliSec(WCHAR *fmt = DATETIME_FORMAT);
+	wstr_t NowTime(WCHAR *fmt = DATETIME_FORMAT);
+	wstr_t NowTimeWithMilliSec(WCHAR *fmt = DATETIME_FORMAT);
 
-	wstr_t today();
-	wstr_t tomorrow();
-	wstr_t yesterday();
+	wstr_t Today();
+	wstr_t Tomorrow();
+	wstr_t Yesterday();
 
-	DayOfWeek todayOfWeek();
+	DayOfWeek TodayOfWeek();
+private:
+	tick_t mServerStartTick;
+	wstr_t tickToStr(tick_t tick, WCHAR *fmt = DATETIME_FORMAT);
+
+
 };

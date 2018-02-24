@@ -1,27 +1,32 @@
 #pragma once
 #include "stdafx.h"
 
-
 template <class T>
-class Singleton {
-private:
-	static T * instance;
-protected:
-	Singleton() {}
-	virtual ~Singleton() {}
+class Singleton
+{
 public:
-	static T *getInstance() {
-		if (instance == NULL) {
+	static T *GetInstance()
+	{
+		if (instance == NULL)
+		{
 			instance = new T;
 		}
 		return instance;
 	};
-	static void destroyInstance() {
-		if (instance) {
+	static void DestroyInstance()
+	{
+		if (instance)
+		{
 			delete instance;
 			instance = NULL;
 		}
 	};
+protected:
+	Singleton() {}
+	virtual ~Singleton() {}
+private:
+	static T * instance;
+
 };
 
 template <class T> T *Singleton<T>::instance = 0;
