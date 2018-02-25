@@ -9,6 +9,7 @@
 #include "Util\Util.h"
 #include "Util\Singleton.h"
 #include "Util\Clock.h"
+#include "Util\spdlog\spdlog.h"
 
 namespace spd = spdlog;
 int main() {
