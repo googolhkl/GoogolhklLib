@@ -1,3 +1,4 @@
+﻿#include "stdafx.h"
 #include "Assert.h"
 
 namespace spd = spdlog;
@@ -7,6 +8,7 @@ void Assert(int condition, const WCHAR *conditionStr, const WCHAR *fileName, int
 	{
 		return;
 	}
+	// TODO: 서버 종료
 
 	wstr_t msg;
 	msg = L"Assert: ";
@@ -19,4 +21,5 @@ void Assert(int condition, const WCHAR *conditionStr, const WCHAR *fileName, int
 	_itow_s(lineNo, buf, 10);
 	msg += buf;
 	spd::get("console")->error(L"! error {}", msg);
+	// TODO: 메모리 덤프
 }
