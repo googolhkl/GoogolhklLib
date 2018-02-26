@@ -5,6 +5,7 @@ namespace spd = spdlog;
 bool _shutdown = false;
 void ShutdownServer()
 {
+	spd::get("console")->info(L"Server Shutdown!!");
 
 	/* TODO
 		현재 접속중 모든 유저 세션 종료

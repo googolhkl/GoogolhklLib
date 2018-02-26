@@ -8,7 +8,7 @@ void Assert(int condition, const WCHAR *conditionStr, const WCHAR *fileName, int
 	{
 		return;
 	}
-	// TODO: 서버 종료
+	ShutdownServer();
 
 	wstr_t msg;
 	msg = L"Assert: ";
