@@ -52,3 +52,5 @@ typedef void(*Function)(void *);  // Function f; 와 같은 문장은 void(*f)(void *)
 #include "./Util/RandomMT.h"
 #include "./Util/Clock.h"
 #include "./Util/Lock.h"
+#include "./Util/Thread.h"
+#include "./Util/Assert.h"
