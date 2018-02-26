@@ -4,8 +4,8 @@
 #include <ctime>
 
 #define CLOCK Clock::GetInstance()
-#define NOW_TICK CLOCK.systemTick
-#define NOW_STRING CLOCK.nowTime
+#define NOW_TICK CLOCK->SystemTick
+#define NOW_STRING CLOCK->NowTime
 
 #define TICK_MIN (60)
 #define TICK_HOUR (TICK_MIN * 60)

@@ -21,5 +21,5 @@ void Assert(int condition, const WCHAR *conditionStr, const WCHAR *fileName, int
 	_itow_s(lineNo, buf, 10);
 	msg += buf;
 	spd::get("console")->error(L"! error {}", msg);
-	// TODO: 메모리 덤프
+	MiniDump::GetInstance()->exceptionFilter(NULL);
 }
