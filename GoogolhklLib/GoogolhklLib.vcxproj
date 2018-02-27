@@ -157,6 +157,7 @@
     <ClInclude Include="Shutdown.h" />
     <ClInclude Include="Util\Singleton.h" />
     <ClInclude Include="Util\Thread.h" />
+    <ClInclude Include="Util\ThreadJobQueue.h" />
     <ClInclude Include="Util\Type.h" />
     <ClInclude Include="Util\Util.h" />
   </ItemGroup>
