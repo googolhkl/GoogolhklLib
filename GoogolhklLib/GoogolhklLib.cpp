@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-
+#include <vld.h>  // 메모리 누수 체크
 // 테스트 코드
 #include "GoogolhklLib.h"
 #include "Util\spdlog\spdlog.h"
@@ -24,6 +24,7 @@ int main() {
 	console->info("Support for floats {:03.2f}", 1.23456);
 	console->info("Positional args are {1} {0}..", "too", "supported");
 	console->info("{:<30}", "left aligned");
+
 
 	ASSERT(1 != 1);
     return 0;
