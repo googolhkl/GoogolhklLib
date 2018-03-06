@@ -8,7 +8,22 @@
 #include "Util\spdlog\spdlog.h"
 
 namespace spd = spdlog;
+
+class SystemReport : public Work
+{
+	void Tick()
+	{
+		Monitoring *monitor = Monitoring::GetInstance();
+		auto console = spd::stdout_color_mt("console");
+		console->info("Support for floats {0:2.2f}", monitor->processCpuUsage());
+	}
+};
 int main() {
+	_shutdown = false;
+	SystemReport systemReport;
+	const int MONITOR_REPORTING_SEC = 1;
+	TaskManager::GetInstance()->Initialize(2);
+	TaskManager::GetInstance()->Add(&systemReport, MONITOR_REPORTING_SEC, TICK_INFINITY);
 	// Clock 테스트
 	printf("어제: %ws\n", CLOCK->Yesterday().c_str());
 	printf("오늘: %ws\n", CLOCK->Today().c_str());
