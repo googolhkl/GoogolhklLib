@@ -153,12 +153,14 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Util\Assert.h" />
     <ClInclude Include="Util\Clock.h" />
+    <ClInclude Include="Util\GameObject.h" />
     <ClInclude Include="Util\Lock.h" />
     <ClInclude Include="Util\Memory_LowFragmenetationHeap.h" />
     <ClInclude Include="Util\Minidump.h" />
     <ClInclude Include="Util\RandomMT.h" />
     <ClInclude Include="Shutdown.h" />
     <ClInclude Include="Util\Singleton.h" />
+    <ClInclude Include="Util\Task.h" />
     <ClInclude Include="Util\Thread.h" />
     <ClInclude Include="Util\ThreadJobQueue.h" />
     <ClInclude Include="Util\Type.h" />
@@ -177,6 +179,7 @@
     <ClCompile Include="Util\Lock.cpp" />
     <ClCompile Include="Util\Minidump.cpp" />
     <ClCompile Include="Shutdown.cpp" />
+    <ClCompile Include="Util\Task.cpp" />
     <ClCompile Include="Util\Thread.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

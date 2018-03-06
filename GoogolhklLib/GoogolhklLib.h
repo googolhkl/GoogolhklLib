@@ -55,6 +55,7 @@ typedef void(*Function)(void *);  // Function f; 와 같은 문장은 void(*f)(void *)
 #include "./Util/Thread.h"
 #include "./Util/Assert.h"
 #include "./Util/Minidump.h"
+#include "./Util/GameObject.h"
 
 // 전역 변수
 #include "Shutdown.h"
