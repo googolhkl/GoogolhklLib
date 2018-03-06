@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "stdafx.h"
 
 #define TICK_INFINITY 0
@@ -39,7 +39,7 @@ class TaskManager : public Singleton <TaskManager>
 public:
 	TaskManager();
 	virtual ~TaskManager();
-	void Initialize(int threadCount); // TODO: json or xml ÆÄÀÏ·Î ¼³Á¤ÇÏ±â
+	void Initialize(int threadCount); // TODO: json or xml íŒŒì¼ë¡œ ì„¤ì •í•˜ê¸°
 	void Add(Work *workObject, int frequencySec, int durationSec);
 private:
 	int mThreadCount;

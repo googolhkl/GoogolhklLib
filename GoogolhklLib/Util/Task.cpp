@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Task.h"
 
 // TaskNode
@@ -102,7 +102,7 @@ void Task::Run()
 // TaskManager
 TaskManager::TaskManager()
 {
-	this->Initialize(2); // TODO: Default Thread°ª xml or jsonÀ¸·Î ¼³Á¤ÇÏ±â
+	this->Initialize(2); // TODO: Default Threadê°’ xml or jsonìœ¼ë¡œ ì„¤ì •í•˜ê¸°
 }
 
 void TaskManager::Initialize(int threadCount)
