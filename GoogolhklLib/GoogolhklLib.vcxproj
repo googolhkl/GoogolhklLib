@@ -157,6 +157,7 @@
     <ClInclude Include="Util\Lock.h" />
     <ClInclude Include="Util\Memory_LowFragmenetationHeap.h" />
     <ClInclude Include="Util\Minidump.h" />
+    <ClInclude Include="Util\Monitoring.h" />
     <ClInclude Include="Util\RandomMT.h" />
     <ClInclude Include="Shutdown.h" />
     <ClInclude Include="Util\Singleton.h" />

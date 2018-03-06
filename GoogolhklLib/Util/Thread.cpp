@@ -5,10 +5,10 @@
 // Thread
 Thread::Thread(thread_t *thread, wstr_t name)
 {
-	std::hash<std::thread::id> hasher;
-	mId = hasher(mThread->get_id());
 	mName = name;
 	mThread = thread;
+	std::hash<std::thread::id> hasher;
+	mId = hasher(mThread->get_id());
 
 	ThreadManager::GetInstance()->Put(this);
 }

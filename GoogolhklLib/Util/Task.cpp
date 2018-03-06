@@ -107,7 +107,8 @@ TaskManager::TaskManager()
 
 void TaskManager::Initialize(int threadCount)
 {
-	for (int i = 0; i < mThreadCount; i++)
+	mThreadCount = threadCount;
+	for (int i = 0; i < threadCount; i++)
 	{
 		Task *task = new Task(i);
 		mTaskPool.push_back(task);
