@@ -14,17 +14,17 @@ class SystemReport : public Work
 	void Tick()
 	{
 		Monitoring *monitor = Monitoring::GetInstance();
-		auto console = spd::stdout_color_mt("console");
-		console->info("Support for floats {0:2.2f}", monitor->processCpuUsage());
+		cout << monitor->processCpuUsage() << endl;
 	}
 };
 int main() {
-	_shutdown = false;
 	SystemReport systemReport;
 	const int MONITOR_REPORTING_SEC = 1;
-	TaskManager::GetInstance()->Initialize(2);
+	TaskManager *manager = TaskManager::GetInstance();
 	TaskManager::GetInstance()->Add(&systemReport, MONITOR_REPORTING_SEC, TICK_INFINITY);
+	while (1) {}
 	// Clock 테스트
+	/*
 	printf("어제: %ws\n", CLOCK->Yesterday().c_str());
 	printf("오늘: %ws\n", CLOCK->Today().c_str());
 	printf("내일: %ws\n", CLOCK->Tomorrow().c_str());
@@ -39,9 +39,8 @@ int main() {
 	console->info("Support for floats {:03.2f}", 1.23456);
 	console->info("Positional args are {1} {0}..", "too", "supported");
 	console->info("{:<30}", "left aligned");
+	*/
 
-
-	ASSERT(1 != 1);
     return 0;
 }
 
